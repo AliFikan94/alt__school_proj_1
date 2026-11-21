@@ -1,0 +1,620 @@
+:root {
+  --color-primary: #543ee0;
+  --color-primary-hover: #4330c4;
+  --color-cream: #ffedcc;
+  --color-text-dark: #111111;
+  --color-text-muted: #626262;
+  --color-white: #ffffff;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --container-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================================
+   2. BUTTONS
+   ========================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 156px;
+  height: 52px;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-text-dark);
+}
+
+.btn-outline:hover {
+  background-color: rgba(84, 62, 224, 0.06);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+/* =========================================
+   3. SECTION 1: HEADER
+   ========================================= */
+.navbar {
+  background-color: var(--color-white);
+  height: 96px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* =========================================
+   4. SECTION 2: HERO
+   ========================================= */
+.hero {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("assets/landpix.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-white);
+}
+
+.hero-inner {
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 36px;
+}
+
+.hero-btn {
+  min-width: 160px;
+  height: 54px;
+}
+
+/* =========================================
+   5. SECTION 3: ABOUT
+   ========================================= */
+.about {
+  padding: 96px 0;
+  background-color: var(--color-white);
+}
+
+.about-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 560px;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-text-dark);
+}
+
+.about-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 7px;
+  display: block;
+}
+
+
+/* =========================================
+   6. SECTION 4: FEATURES
+   ========================================= */
+.features {
+  padding: 40px 0 96px;
+  background-color: var(--color-white);
+}
+
+.features-header {
+  max-width: 960px;
+  margin: 0 auto 48px;
+}
+
+.features-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.features-header p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-dark);
+  text-align: left;
+}
+
+.features-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.feature-card {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 28px 24px 36px;
+  background-color: var(--color-white);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.feature-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #f4f2fe;
+  color: var(--color-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 14px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+/* =========================================
+   7. SECTION 5: TESTIMONIAL
+   ========================================= */
+.testimonial {
+  background-color: var(--color-cream);
+  padding: 72px 0;
+}
+
+.testimonial-inner {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.testimonial-avatar {
+  flex-shrink: 0;
+}
+
+.testimonial-avatar img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.testimonial-content {
+  max-width: 780px;
+}
+
+.testimonial-content blockquote {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-dark);
+  margin-bottom: 32px;
+}
+
+.testimonial-author {
+  font-size: 18px;
+  color: var(--color-text-dark);
+  margin-bottom: 24px;
+}
+
+.testimonial-author strong {
+  font-weight: 700;
+}
+
+.testimonial-author span {
+  font-size: 15px;
+  font-weight: 400;
+  color: #333333;
+}
+
+/* =========================================
+   8. SECTION 6: COMMUNITY / CTA
+   ========================================= */
+.community {
+  padding: 96px 0;
+  background-color: var(--color-white);
+}
+
+.community-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+}
+
+.community-avatars {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  flex-shrink: 0;
+}
+
+.community-avatars img {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  display: block;
+}
+
+.avatar-top-left {
+  top: 12px;
+  left: 36px;
+}
+
+.avatar-mid-right {
+  top: 136px;
+  right: 12px;
+}
+
+.avatar-bottom-left {
+  bottom: 12px;
+  left: 36px;
+}
+
+.community-content {
+  max-width: 580px;
+}
+
+.community-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text-dark);
+  margin-bottom: 20px;
+}
+
+.community-content p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text-dark);
+  margin-bottom: 32px;
+}
+
+/* =========================================
+   9. SECTION 7: FOOTER
+   ========================================= */
+.footer {
+  background-color: var(--color-cream);
+  padding: 72px 0 96px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.footer-brand .logo {
+  display: inline-block;
+  margin-top: -4px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 24px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-col a {
+  font-size: 15px;
+  color: var(--color-text-dark);
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   10. RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* Tablet & Small Desktop (992px and below) */
+@media (max-width: 992px) {
+  /* Header */
+  .navbar {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .navbar-inner {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 500px;
+    padding: 64px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  /* About */
+  .about {
+    padding: 64px 0;
+  }
+
+  .about-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-text,
+  .about-image {
+    max-width: 100%;
+  }
+
+  /* Features */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Testimonial */
+  .testimonial-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .testimonial-avatar img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Community */
+  .community {
+    padding: 64px 0;
+  }
+
+  .community-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 48px;
+  }
+
+  .community-avatars {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .community-avatars img {
+    position: static;
+    width: 130px;
+    height: 130px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+/* Mobile Phones (640px and below) */
+@media (max-width: 640px) {
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-actions {
+    gap: 10px;
+  }
+
+  .nav-actions .btn {
+    min-width: auto;
+    height: 40px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+
+  .nav-links {
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  /* Hero */
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  /* Headings */
+  .about-text h2,
+  .features-header h2,
+  .community-content h2 {
+    font-size: 28px;
+  }
+
+  .about-image img {
+    height: 240px;
+  }
+
+  /* Features: Single column stack */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Community Avatars */
+  .community-avatars {
+    gap: 12px;
+  }
+
+  .community-avatars img {
+    width: 96px;
+    height: 96px;
+  }
+
+  /* Footer: Single column stack */
+  .footer {
+    padding: 48px 0 64px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
